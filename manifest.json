@@ -1,0 +1,7 @@
+{
+  "name": "my-pomodoro",
+  "short_name": "my-pomodoro",
+  "description": "A simple way to follow the pomodoro technique",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,55 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="task-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+      }
+    </style>
+
+    <div class="task-section">
+      <h4>
+        Tasks to do:
+      </h4>
+
+      <div class="tasks">
+        <template is="dom-repeat" items="{{tasks}}">
+          <div>
+            {{item}}
+          </div>
+        </template>
+      </div>
+    </div>
+    
+    <div class="new-tasks">
+      <input id="new-task" placeholder="New task to do">
+      <button on-tap="addTask">Add Task</button>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'task-list',
+
+      properties: {
+        tasks: {
+          type: Array,
+          value: function() { return []; }
+        },
+
+      },
+      addTask: function(){
+        newTask = this.$$("#new-task").value;
+        console.log(newTask);
+        this.tasks.push(newTask);
+        console.log(this.tasks);
+        this.$$("#new-task").value = "";
+      }
+
+    });
+  </script>
+</dom-module>

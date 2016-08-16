@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../the-pomodoro/the-pomodoro.html">
+<link rel="import" href="../task-list/task-list.html">
+
+<dom-module id="my-pomodoro-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        font-family: Roboto;
+        text-align: center;
+      }
+
+      .notes {
+        margin-top: 1em;
+      }
+
+      paper-textarea {
+        display: block;
+        margin: auto;
+        max-width: 400px;
+      }
+    </style>
+    <the-pomodoro></the-pomodoro>
+    <!--<task-list></task-list>-->
+    <paper-textarea label="Notes" rows="5"></paper-textarea>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'my-pomodoro-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'my-pomodoro-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
